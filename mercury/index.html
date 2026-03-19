@@ -27,7 +27,8 @@
     --font: 'Inter', sans-serif;
   }
 
-  html, body { min-height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 15px; line-height: 1.7; overflow-x: hidden; }
+  html { overflow-y: scroll; }
+html, body { min-height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 15px; line-height: 1.7; overflow-x: hidden; }
 
   /* HEADER */
   .header { position: sticky; top: 0; z-index: 100; background: var(--bg-dark); padding: 0 48px; display: flex; align-items: center; justify-content: center; height: 52px; }
@@ -44,9 +45,9 @@
   .welcome-logo-name { font-size: 22px; font-weight: 600; color: rgba(255,255,255,0.75); letter-spacing: -0.02em; }
   .welcome-card { background: #111116; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 40px 44px; }
   .welcome-card-label { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.35); margin-bottom: 10px; letter-spacing: 0.02em; }
-  .welcome-card-name { font-size: clamp(36px, 5vw, 64px); font-weight: 900; color: #fff; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 18px; }
+  .welcome-card-name { font-size: clamp(36px, 6vw, 80px); font-weight: 900; color: #fff; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 18px; }
   .welcome-accent { color: var(--accent); }
-  .welcome-card-sub { font-size: 16px; color: rgba(255,255,255,0.4); line-height: 1.75; margin-bottom: 28px; max-width: 540px; }
+  .welcome-card-sub { font-size: 16px; color: rgba(255,255,255,0.4); line-height: 1.75; margin-bottom: 28px; max-width: 100%; }
   .welcome-card-actions { display: flex; gap: 10px; flex-wrap: wrap; }
   .welcome-btn-primary { font-size: 13px; font-weight: 600; color: #fff; background: var(--accent); border-radius: 100px; padding: 11px 24px; text-decoration: none; display: inline-block; transition: opacity 0.15s; }
   .welcome-btn-primary:hover { opacity: 0.85; }
