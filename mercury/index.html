@@ -13,25 +13,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --bg: #ffffff;
-    --bg-dark: #0c0c0e;
-    --bg-section: #f7f7f8;
-    --accent: #6b5ce7;
-    --accent-light: #ede9fe;
-    --text: #0c0c0e;
-    --muted: #6b7280;
-    --muted-light: #9ca3af;
-    --border: #e5e7eb;
-    --font: 'Inter', sans-serif;
+    --bg: #ffffff; --bg-dark: #0c0c0e; --bg-section: #f7f7f8;
+    --accent: #6b5ce7; --accent-light: #ede9fe;
+    --text: #0c0c0e; --muted: #6b7280; --muted-light: #9ca3af;
+    --border: #e5e7eb; --font: 'Inter', sans-serif;
   }
-
   html { overflow-y: scroll; }
-html, body { min-height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 15px; line-height: 1.7; overflow-x: hidden; }
-body { padding-top: 52px; }
-
-  /* HEADER */
+  html, body { min-height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 15px; line-height: 1.7; overflow-x: hidden; }
+  body { padding-top: 52px; }
   .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg-dark); padding: 0 48px; display: flex; align-items: center; justify-content: center; height: 52px; }
   .header-nav { display: flex; gap: 36px; }
   .header-nav a { font-size: 12px; color: rgba(255,255,255,0.55); text-decoration: none; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.15s; }
@@ -39,15 +29,14 @@ body { padding-top: 52px; }
 
   /* WELCOME HEADER */
   .welcome-header { display: flex; flex-direction: column; padding: 56px 64px; background: var(--bg-dark); gap: 28px; }
-  .welcome-top { display: flex; align-items: center; gap: 16px; }
-  .welcome-text { font-size: 22px; font-weight: 300; color: rgba(255,255,255,0.3); letter-spacing: -0.01em; }
-  .welcome-logo { display: flex; align-items: center; gap: 10px; }
-  .welcome-logo svg path { fill: rgba(255,255,255,0.75); }
-  .welcome-logo-name { font-size: 22px; font-weight: 600; color: rgba(255,255,255,0.75); letter-spacing: -0.02em; }
+  .welcome-top { display: flex; align-items: center; gap: 24px; }
+  .welcome-text { font-size: clamp(36px, 5vw, 64px); font-weight: 300; color: rgba(255,255,255,0.35); letter-spacing: -0.02em; }
+  .welcome-logo { display: flex; align-items: center; }
   .welcome-card { background: #111116; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 40px 44px; }
   .welcome-card-label { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.35); margin-bottom: 10px; letter-spacing: 0.02em; }
   .welcome-card-name { font-size: clamp(36px, 6vw, 80px); font-weight: 900; color: #fff; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 18px; }
   .welcome-accent { color: var(--accent); }
+  .welcome-card-tagline { font-size: clamp(16px, 2vw, 22px); font-weight: 600; color: rgba(255,255,255,0.7); line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.01em; }
   .welcome-card-sub { font-size: 16px; color: rgba(255,255,255,0.4); line-height: 1.75; margin-bottom: 28px; max-width: 100%; }
   .welcome-card-actions { display: flex; gap: 10px; flex-wrap: wrap; }
   .welcome-btn-primary { font-size: 13px; font-weight: 600; color: #fff; background: var(--accent); border-radius: 100px; padding: 11px 24px; text-decoration: none; display: inline-block; transition: opacity 0.15s; }
@@ -61,32 +50,22 @@ body { padding-top: 52px; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-eyebrow { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
   .section-title { font-size: clamp(22px, 3vw, 34px); font-weight: 700; color: var(--text); letter-spacing: -0.02em; margin-bottom: 40px; line-height: 1.2; }
-
-  /* STATS */
   .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .stat { background: var(--bg); border: 1px solid var(--border); padding: 28px 24px; border-radius: 8px; }
   .stat-value { font-size: 36px; font-weight: 800; color: var(--accent); display: block; margin-bottom: 6px; letter-spacing: -0.03em; line-height: 1; }
   .stat-value.small { font-size: 14px; font-weight: 700; padding-top: 10px; color: var(--accent); }
   .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; line-height: 1.5; }
   .stat-label a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); white-space: nowrap; }
-
-  /* SKILLS */
   .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .skill-card { background: var(--bg); border: 1px solid var(--border); padding: 28px 24px; border-radius: 8px; }
   .skill-category { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
   .skill-list { font-size: 13px; color: var(--muted); line-height: 2.1; }
-
-  /* WORK */
   .work-grid { display: flex; flex-direction: column; gap: 16px; }
   .work-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 32px; }
   .work-tag { font-size: 10px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; }
   .work-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px; letter-spacing: -0.01em; }
   .work-desc { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 20px; }
-
-  /* TWEETS */
   .tweet-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-
-  /* EXPERIENCE */
   .exp-list { display: flex; flex-direction: column; gap: 2px; }
   .exp-row { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; display: grid; grid-template-columns: 32px 160px 1fr auto auto; gap: 16px; align-items: start; transition: background 0.15s; }
   .exp-row:hover { background: #fafafa; }
@@ -98,23 +77,16 @@ body { padding-top: 52px; }
   .role-desc { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.8; list-style: none; }
   .role-desc li { padding-left: 14px; position: relative; margin-bottom: 4px; }
   .role-desc li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 10px; top: 2px; }
-
-  /* FOOTER */
   .footer { background: var(--bg-dark); padding: 28px 64px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255,255,255,0.35); }
   .footer-links { display: flex; gap: 24px; }
   .footer-links a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.15s; }
   .footer-links a:hover { color: #fff; }
-
-  /* ANIMATIONS */
   .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-  /* MOBILE */
   @media (max-width: 768px) {
-    .header { padding: 0 20px; }
-    .header-nav { gap: 20px; }
-    .welcome-header { padding: 36px 20px; gap: 20px; }
-    .welcome-card { padding: 24px; }
+    .header { padding: 0 20px; } .header-nav { gap: 20px; }
+    .welcome-header { padding: 36px 20px; gap: 20px; } .welcome-card { padding: 24px; }
+    .welcome-text { font-size: 32px; }
     .section-light, .section-gray { padding: 60px 20px; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
@@ -127,38 +99,24 @@ body { padding-top: 52px; }
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <nav class="header-nav">
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#wins">Social Wins</a>
-    <a href="#experience">Experience</a>
+    <a href="#about">About</a><a href="#work">Work</a><a href="#wins">Social Wins</a><a href="#experience">Experience</a>
   </nav>
 </header>
 
-<!-- WELCOME HEADER -->
 <div class="welcome-header">
   <div class="welcome-top">
-    <span class="welcome-text">Welcome</span>
+    <span class="welcome-text">Hey</span>
     <div class="welcome-logo">
-      <svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" id="Logo" width="32" height="32" version="1.1" viewBox="0 0 32 32">
-  <title>Mercury logo</title>
-  <desc>The logo for Mercury, featuring a circular emblem with abstract, interconnected swirling lines.</desc>
-  <g id="Symbol">
-    <path
-      d="M23.9473,15.9296872c0-1.1955996.8087997-2.0044003,2.0394993-2.0044003,1.1253014,0,1.898901.8088007,1.898901,2.0044003,0,1.1603994-.7735996,1.934001-1.898901,1.934001-1.2306995,0-2.0394993-.7736015-2.0394993-1.934001ZM20.9230995,9.6703173c.7033005-1.0197697,1.1604004-2.2505503,1.1604004-3.9736099,1.7231007,1.0197797,3.1648006,2.4615002,4.1846008,4.1846094-1.6879005,0-2.9187012.4570704-3.9384003,1.19557-.3868999-.5274992-.8791008-1.0196991-1.406601-1.4065695ZM20.8526993,22.2592875c.5275002-.3866997.9847012-.8791008,1.406601-1.3714008,1.0198002.7737007,2.285799,1.2308006,4.0088005,1.2308006-1.0198002,1.7581997-2.4615002,3.2000008-4.1846008,4.1846008,0-1.7582016-.4570999-3.0242004-1.2308006-4.0440006ZM19.7978001,1.3714173c6.5757999,1.6527499,11.287899,7.4901298,11.287899,14.62857,0,2.9890003-2.2504997,5.2043991-5.169199,5.2043991-1.1956005,0-2.3209-.3867989-3.1648006-1.0197983.4570999-.7384014.7735996-1.5472012.9846001-2.4264011.5626011.6329994,1.3714008,1.0198002,2.2504997,1.0198002,1.5121002,0,2.8132-1.3010998,2.8132-2.8483,0-4.8879004-2.8132-9.17803-6.9273987-11.3231101-.3164997-1.2659297-1.0902004-2.4263699-2.0748005-3.2351598ZM18.1450996,20.1845881c1.5121002-.7736015,2.5669994-2.3560009,2.5669994-4.1846008,0-3.4462004,3.0593014-5.6967001,6.0835018-5.1341.3867989.8439999.6680984,1.7933998.8790989,2.7428999-.4923-.3867998-1.0548992-.5978003-1.6879005-.5978003-1.6175995,0-2.9538994,1.3362999-2.9538994,2.9187002,0,2.3912001-1.0900993,4.4306993-2.7427998,5.6967001-.5977993-.6329994-1.3362999-1.1252995-2.1450005-1.4417992ZM14.0307999,6.1186573c0-1.19559.8087997-2.0043898,2.0394993-2.0043898,1.1253014,0,1.898901.8087997,1.898901,2.0043898,0,1.16044-.7735996,1.9340501-1.898901,1.9340501-1.2306995,0-2.0394993-.7736101-2.0394993-1.9340501ZM14.0307999,25.9516875c0-1.1956005.8087997-2.0044003,2.0394993-2.0044003,1.1253014,0,1.898901.8087997,1.898901,2.0044003,0,1.1604004-.7735996,1.934-1.898901,1.934-1.2306995,0-2.0394993-.7735996-2.0394993-1.934ZM12.2021999,15.9999873c0-2.1801996,1.6176004-3.7978001,3.8330002-3.7978001,2.1802006,0,3.7625999,1.6176004,3.7625999,3.7978001,0,2.2154007-1.5823994,3.7978001-3.7625999,3.7978001-2.2153997,0-3.8330002-1.5823994-3.8330002-3.7978001ZM16.0352001,11.2878872c-3.3759003,0-5.6264-2.81318-5.1341-6.0483398.8790998-.4219799,1.8636999-.7384601,2.8483-.91429-.3867998.49231-.6329002,1.1252899-.6329002,1.7933998,0,1.5472698,1.3361998,2.8483901,2.9537992,2.8483901,2.3561001,0,4.3956013.9846096,5.6264,2.6373396-.6680984.6330004-1.1603985,1.4066-1.5120983,2.2505007-.7736015-1.5121002-2.3560009-2.5670004-4.1494007-2.5670004ZM10.8308001,25.8812872c0-1.1956005.3867998-2.2856998,1.0198002-3.1296005.7031994.4218998,1.4769001.7735996,2.3207998.9846001-.6330004.527401-1.0549002,1.3362999-1.0549002,2.2154007,0,1.5471992,1.3361998,2.848299,2.9537992,2.848299,4.9231014,0,9.1429005-2.7779999,11.2528-6.8571987,1.3011017-.3164005,2.4615002-1.0549011,3.2702999-2.0747013-1.6526985,6.5407009-7.4549999,11.2175999-14.593399,11.2175999-2.9187002,0-5.1691999-2.2504997-5.1691999-5.2043991ZM10.4088001,20.3252875c.5978003-.6329994,1.0901003-1.3715,1.4066-2.1802006.7735996,1.5121002,2.3912001,2.5669994,4.2198,2.5669994,3.3757992,0,5.5911999,2.9890003,5.0636997,6.1187-.8790989.3868008-1.8285999.7033005-2.8132.8791008.3516998-.4923.5977993-1.0900993.5977993-1.7581997,0-1.5825005-1.3010998-2.9188004-2.8132-2.9188004-2.355999,0-4.3955994-1.0548992-5.661499-2.7075996ZM5.7670598,22.1186873c1.68788,0,2.9538302-.4570999,3.9736104-1.2308006.4219294.4923.8791294.9847012,1.4066296,1.3714008-.7736998,1.0198002-1.2307997,2.285799-1.2307997,4.0088005-1.7231102-1.0198002-3.1296701-2.4263-4.1494403-4.1494007ZM5.7318902,9.8813168c1.0197797-1.6879396,2.4614997-3.1296597,4.1846099-4.1494393,0,1.7582197.4570999,3.0241694,1.2658997,4.0439401-.5275002.3867693-1.0198002.8439693-1.4065695,1.3714695-1.0197706-.8088999-2.2857203-1.2659702-4.0439401-1.2659702ZM4.2901101,18.1450869c.5274701.3868008,1.16044.6329002,1.8637199.6329002,1.5121098,0,2.81323-1.3010998,2.81323-2.8483,0-2.2858,1.0901403-4.2550001,2.7428398-5.5208998.6329002.5978003,1.3713999,1.0901003,2.1801996,1.4066-1.5472994.7735996-2.6021996,2.3912001-2.6021996,4.1845999,0,3.4461994-2.9186802,5.6264-6.0483398,5.1341-.4219799-.9494991-.7384601-1.9340992-.94945-2.9890003ZM4.1142802,15.9296872c0-1.1955996.8087997-2.0044003,2.0395498-2.0044003,1.1252799,0,1.89889.8088007,1.89889,2.0044003,0,1.1603994-.7736101,1.934001-1.89889,1.934001-1.2307501,0-2.0395498-.7736015-2.0395498-1.934001ZM1.37143,12.1670872C3.05934,5.5912072,8.8615599.9142702,15.9647999.9142702c2.9538994,0,5.204401,2.250547,5.204401,5.1692169,0,1.19561-.3516006,2.2505598-.9493999,3.0945005-.7033005-.4219408-1.4770012-.7384405-2.3209019-.9142809.5978012-.5274396.9846001-1.3011098.9846001-2.1450496,0-1.5823998-1.3010998-2.9186699-2.8132-2.9186699-4.9581995,0-9.2482991,2.8131697-11.3933792,6.8572004-1.3011.3163996-2.46154,1.0900993-3.3054899,2.1098995ZM.914283,15.9999873c0-2.9538002,2.250547-5.2044001,5.204387-5.2044001,1.19561,0,2.2857203.3867998,3.1296601,1.0550003-.4219398.6680994-.7384405,1.4066-.94944,2.2152996-.5274501-.6329994-1.3011103-1.0549002-2.1450601-1.0549002-1.6175599,0-2.95383,1.3362999-2.95383,2.9187002,0,4.9933996,2.7780001,9.2482996,6.8923004,11.4285002.3164997,1.3010998,1.0900993,2.4263992,2.1098995,3.2703991C5.62639,29.0109869.914283,23.1735865.914283,15.9999873ZM15.9647999,31.9999873c8.5450993,0,16.0352001-6.8220005,16.0352001-16C32,7.1384274,24.8616009-.0000127,15.9647999-.0000127,7.1384401-.0000127,0,7.1384274,0,15.9999873c0,8.8616009,7.1384401,16,15.9647999,16Z" />
-    <path
-      d="M23.9473,15.9296872c0-1.1955996.8087997-2.0044003,2.0394993-2.0044003,1.1253014,0,1.898901.8088007,1.898901,2.0044003,0,1.1603994-.7735996,1.934001-1.898901,1.934001-1.2306995,0-2.0394993-.7736015-2.0394993-1.934001ZM20.9230995,9.6703173c.7033005-1.0197697,1.1604004-2.2505503,1.1604004-3.9736099,1.7231007,1.0197797,3.1648006,2.4615002,4.1846008,4.1846094-1.6879005,0-2.9187012.4570704-3.9384003,1.19557-.3868999-.5274992-.8791008-1.0196991-1.406601-1.4065695ZM20.8526993,22.2592875c.5275002-.3866997.9847012-.8791008,1.406601-1.3714008,1.0198002.7737007,2.285799,1.2308006,4.0088005,1.2308006-1.0198002,1.7581997-2.4615002,3.2000008-4.1846008,4.1846008,0-1.7582016-.4570999-3.0242004-1.2308006-4.0440006ZM19.7978001,1.3714173c6.5757999,1.6527499,11.287899,7.4901298,11.287899,14.62857,0,2.9890003-2.2504997,5.2043991-5.169199,5.2043991-1.1956005,0-2.3209-.3867989-3.1648006-1.0197983.4570999-.7384014.7735996-1.5472012.9846001-2.4264011.5626011.6329994,1.3714008,1.0198002,2.2504997,1.0198002,1.5121002,0,2.8132-1.3010998,2.8132-2.8483,0-4.8879004-2.8132-9.17803-6.9273987-11.3231101-.3164997-1.2659297-1.0902004-2.4263699-2.0748005-3.2351598ZM18.1450996,20.1845881c1.5121002-.7736015,2.5669994-2.3560009,2.5669994-4.1846008,0-3.4462004,3.0593014-5.6967001,6.0835018-5.1341.3867989.8439999.6680984,1.7933998.8790989,2.7428999-.4923-.3867998-1.0548992-.5978003-1.6879005-.5978003-1.6175995,0-2.9538994,1.3362999-2.9538994,2.9187002,0,2.3912001-1.0900993,4.4306993-2.7427998,5.6967001-.5977993-.6329994-1.3362999-1.1252995-2.1450005-1.4417992ZM14.0307999,6.1186573c0-1.19559.8087997-2.0043898,2.0394993-2.0043898,1.1253014,0,1.898901.8087997,1.898901,2.0043898,0,1.16044-.7735996,1.9340501-1.898901,1.9340501-1.2306995,0-2.0394993-.7736101-2.0394993-1.9340501ZM14.0307999,25.9516875c0-1.1956005.8087997-2.0044003,2.0394993-2.0044003,1.1253014,0,1.898901.8087997,1.898901,2.0044003,0,1.1604004-.7735996,1.934-1.898901,1.934-1.2306995,0-2.0394993-.7735996-2.0394993-1.934ZM12.2021999,15.9999873c0-2.1801996,1.6176004-3.7978001,3.8330002-3.7978001,2.1802006,0,3.7625999,1.6176004,3.7625999,3.7978001,0,2.2154007-1.5823994,3.7978001-3.7625999,3.7978001-2.2153997,0-3.8330002-1.5823994-3.8330002-3.7978001ZM16.0352001,11.2878872c-3.3759003,0-5.6264-2.81318-5.1341-6.0483398.8790998-.4219799,1.8636999-.7384601,2.8483-.91429-.3867998.49231-.6329002,1.1252899-.6329002,1.7933998,0,1.5472698,1.3361998,2.8483901,2.9537992,2.8483901,2.3561001,0,4.3956013.9846096,5.6264,2.6373396-.6680984.6330004-1.1603985,1.4066-1.5120983,2.2505007-.7736015-1.5121002-2.3560009-2.5670004-4.1494007-2.5670004ZM10.8308001,25.8812872c0-1.1956005.3867998-2.2856998,1.0198002-3.1296005.7031994.4218998,1.4769001.7735996,2.3207998.9846001-.6330004.527401-1.0549002,1.3362999-1.0549002,2.2154007,0,1.5471992,1.3361998,2.848299,2.9537992,2.848299,4.9231014,0,9.1429005-2.7779999,11.2528-6.8571987,1.3011017-.3164005,2.4615002-1.0549011,3.2702999-2.0747013-1.6526985,6.5407009-7.4549999,11.2175999-14.593399,11.2175999-2.9187002,0-5.1691999-2.2504997-5.1691999-5.2043991ZM10.4088001,20.3252875c.5978003-.6329994,1.0901003-1.3715,1.4066-2.1802006.7735996,1.5121002,2.3912001,2.5669994,4.2198,2.5669994,3.3757992,0,5.5911999,2.9890003,5.0636997,6.1187-.8790989.3868008-1.8285999.7033005-2.8132.8791008.3516998-.4923.5977993-1.0900993.5977993-1.7581997,0-1.5825005-1.3010998-2.9188004-2.8132-2.9188004-2.355999,0-4.3955994-1.0548992-5.661499-2.7075996ZM5.7670598,22.1186873c1.68788,0,2.9538302-.4570999,3.9736104-1.2308006.4219294.4923.8791294.9847012,1.4066296,1.3714008-.7736998,1.0198002-1.2307997,2.285799-1.2307997,4.0088005-1.7231102-1.0198002-3.1296701-2.4263-4.1494403-4.1494007ZM5.7318902,9.8813168c1.0197797-1.6879396,2.4614997-3.1296597,4.1846099-4.1494393,0,1.7582197.4570999,3.0241694,1.2658997,4.0439401-.5275002.3867693-1.0198002.8439693-1.4065695,1.3714695-1.0197706-.8088999-2.2857203-1.2659702-4.0439401-1.2659702ZM4.2901101,18.1450869c.5274701.3868008,1.16044.6329002,1.8637199.6329002,1.5121098,0,2.81323-1.3010998,2.81323-2.8483,0-2.2858,1.0901403-4.2550001,2.7428398-5.5208998.6329002.5978003,1.3713999,1.0901003,2.1801996,1.4066-1.5472994.7735996-2.6021996,2.3912001-2.6021996,4.1845999,0,3.4461994-2.9186802,5.6264-6.0483398,5.1341-.4219799-.9494991-.7384601-1.9340992-.94945-2.9890003ZM4.1142802,15.9296872c0-1.1955996.8087997-2.0044003,2.0395498-2.0044003,1.1252799,0,1.89889.8088007,1.89889,2.0044003,0,1.1603994-.7736101,1.934001-1.89889,1.934001-1.2307501,0-2.0395498-.7736015-2.0395498-1.934001ZM1.37143,12.1670872C3.05934,5.5912072,8.8615599.9142702,15.9647999.9142702c2.9538994,0,5.204401,2.250547,5.204401,5.1692169,0,1.19561-.3516006,2.2505598-.9493999,3.0945005-.7033005-.4219408-1.4770012-.7384405-2.3209019-.9142809.5978012-.5274396.9846001-1.3011098.9846001-2.1450496,0-1.5823998-1.3010998-2.9186699-2.8132-2.9186699-4.9581995,0-9.2482991,2.8131697-11.3933792,6.8572004-1.3011.3163996-2.46154,1.0900993-3.3054899,2.1098995ZM.914283,15.9999873c0-2.9538002,2.250547-5.2044001,5.204387-5.2044001,1.19561,0,2.2857203.3867998,3.1296601,1.0550003-.4219398.6680994-.7384405,1.4066-.94944,2.2152996-.5274501-.6329994-1.3011103-1.0549002-2.1450601-1.0549002-1.6175599,0-2.95383,1.3362999-2.95383,2.9187002,0,4.9933996,2.7780001,9.2482996,6.8923004,11.4285002.3164997,1.3010998,1.0900993,2.4263992,2.1098995,3.2703991C5.62639,29.0109869.914283,23.1735865.914283,15.9999873ZM15.9647999,31.9999873c8.5450993,0,16.0352001-6.8220005,16.0352001-16C32,7.1384274,24.8616009-.0000127,15.9647999-.0000127,7.1384401-.0000127,0,7.1384274,0,15.9999873c0,8.8616009,7.1384401,16,15.9647999,16Z" />
-  </g>
-</svg>
-      <span class="welcome-logo-name">Mercury</span>
+      <svg id="Logo" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 139 32" style="height:clamp(32px,5vw,56px);width:auto;fill:rgba(255,255,255,0.75);"><g id="Symbol"><path d="M23.9473,15.9296872c0-1.1955996.8087997-2.0044003,2.0394993-2.0044003,1.1253014,0,1.898901.8088007,1.898901,2.0044003,0,1.1603994-.7735996,1.934001-1.898901,1.934001-1.2306995,0-2.0394993-.7736015-2.0394993-1.934001ZM20.9230995,9.6703173c.7033005-1.0197697,1.1604004-2.2505503,1.1604004-3.9736099,1.7231007,1.0197797,3.1648006,2.4615002,4.1846008,4.1846094-1.6879005,0-2.9187012.4570704-3.9384003,1.19557-.3868999-.5274992-.8791008-1.0196991-1.406601-1.4065695ZM20.8526993,22.2592875c.5275002-.3866997.9847012-.8791008,1.406601-1.3714008,1.0198002.7737007,2.285799,1.2308006,4.0088005,1.2308006-1.0198002,1.7581997-2.4615002,3.2000008-4.1846008,4.1846008,0-1.7582016-.4570999-3.0242004-1.2308006-4.0440006ZM19.7978001,1.3714173c6.5757999,1.6527499,11.287899,7.4901298,11.287899,14.62857,0,2.9890003-2.2504997,5.2043991-5.169199,5.2043991-1.1956005,0-2.3209-.3867989-3.1648006-1.0197983.4570999-.7384014.7735996-1.5472012.9846001-2.4264011.5626011.6329994,1.3714008,1.0198002,2.2504997,1.0198002,1.5121002,0,2.8132-1.3010998,2.8132-2.8483,0-4.8879004-2.8132-9.17803-6.9273987-11.3231101-.3164997-1.2659297-1.0902004-2.4263699-2.0748005-3.2351598ZM18.1450996,20.1845881c1.5121002-.7736015,2.5669994-2.3560009,2.5669994-4.1846008,0-3.4462004,3.0593014-5.6967001,6.0835018-5.1341.3867989.8439999.6680984,1.7933998.8790989,2.7428999-.4923-.3867998-1.0548992-.5978003-1.6879005-.5978003-1.6175995,0-2.9538994,1.3362999-2.9538994,2.9187002,0,2.3912001-1.0900993,4.4306993-2.7427998,5.6967001-.5977993-.6329994-1.3362999-1.1252995-2.1450005-1.4417992ZM14.0307999,6.1186573c0-1.19559.8087997-2.0043898,2.0394993-2.0043898,1.1253014,0,1.898901.8087997,1.898901,2.0043898,0,1.16044-.7735996,1.9340501-1.898901,1.9340501-1.2306995,0-2.0394993-.7736101-2.0394993-1.9340501ZM14.0307999,25.9516875c0-1.1956005.8087997-2.0044003,2.0394993-2.0044003,1.1253014,0,1.898901.8087997,1.898901,2.0044003,0,1.1604004-.7735996,1.934-1.898901,1.934-1.2306995,0-2.0394993-.7735996-2.0394993-1.934ZM12.2021999,15.9999873c0-2.1801996,1.6176004-3.7978001,3.8330002-3.7978001,2.1802006,0,3.7625999,1.6176004,3.7625999,3.7978001,0,2.2154007-1.5823994,3.7978001-3.7625999,3.7978001-2.2153997,0-3.8330002-1.5823994-3.8330002-3.7978001ZM16.0352001,11.2878872c-3.3759003,0-5.6264-2.81318-5.1341-6.0483398.8790998-.4219799,1.8636999-.7384601,2.8483-.91429-.3867998.49231-.6329002,1.1252899-.6329002,1.7933998,0,1.5472698,1.3361998,2.8483901,2.9537992,2.8483901,2.3561001,0,4.3956013.9846096,5.6264,2.6373396-.6680984.6330004-1.1603985,1.4066-1.5120983,2.2505007-.7736015-1.5121002-2.3560009-2.5670004-4.1494007-2.5670004ZM10.8308001,25.8812872c0-1.1956005.3867998-2.2856998,1.0198002-3.1296005.7031994.4218998,1.4769001.7735996,2.3207998.9846001-.6330004.527401-1.0549002,1.3362999-1.0549002,2.2154007,0,1.5471992,1.3361998,2.848299,2.9537992,2.848299,4.9231014,0,9.1429005-2.7779999,11.2528-6.8571987,1.3011017-.3164005,2.4615002-1.0549011,3.2702999-2.0747013-1.6526985,6.5407009-7.4549999,11.2175999-14.593399,11.2175999-2.9187002,0-5.1691999-2.2504997-5.1691999-5.2043991ZM10.4088001,20.3252875c.5978003-.6329994,1.0901003-1.3715,1.4066-2.1802006.7735996,1.5121002,2.3912001,2.5669994,4.2198,2.5669994,3.3757992,0,5.5911999,2.9890003,5.0636997,6.1187-.8790989.3868008-1.8285999.7033005-2.8132.8791008.3516998-.4923.5977993-1.0900993.5977993-1.7581997,0-1.5825005-1.3010998-2.9188004-2.8132-2.9188004-2.355999,0-4.3955994-1.0548992-5.661499-2.7075996ZM5.7670598,22.1186873c1.68788,0,2.9538302-.4570999,3.9736104-1.2308006.4219294.4923.8791294.9847012,1.4066296,1.3714008-.7736998,1.0198002-1.2307997,2.285799-1.2307997,4.0088005-1.7231102-1.0198002-3.1296701-2.4263-4.1494403-4.1494007ZM5.7318902,9.8813168c1.0197797-1.6879396,2.4614997-3.1296597,4.1846099-4.1494393,0,1.7582197.4570999,3.0241694,1.2658997,4.0439401-.5275002.3867693-1.0198002.8439693-1.4065695,1.3714695-1.0197706-.8088999-2.2857203-1.2659702-4.0439401-1.2659702ZM4.2901101,18.1450869c.5274701.3868008,1.16044.6329002,1.8637199.6329002,1.5121098,0,2.81323-1.3010998,2.81323-2.8483,0-2.2858,1.0901403-4.2550001,2.7428398-5.5208998.6329002.5978003,1.3713999,1.0901003,2.1801996,1.4066-1.5472994.7735996-2.6021996,2.3912001-2.6021996,4.1845999,0,3.4461994-2.9186802,5.6264-6.0483398,5.1341-.4219799-.9494991-.7384601-1.9340992-.94945-2.9890003ZM4.1142802,15.9296872c0-1.1955996.8087997-2.0044003,2.0395498-2.0044003,1.1252799,0,1.89889.8088007,1.89889,2.0044003,0,1.1603994-.7736101,1.934001-1.89889,1.934001-1.2307501,0-2.0395498-.7736015-2.0395498-1.934001ZM1.37143,12.1670872C3.05934,5.5912072,8.8615599.9142702,15.9647999.9142702c2.9538994,0,5.204401,2.250547,5.204401,5.1692169,0,1.19561-.3516006,2.2505598-.9493999,3.0945005-.7033005-.4219408-1.4770012-.7384405-2.3209019-.9142809.5978012-.5274396.9846001-1.3011098.9846001-2.1450496,0-1.5823998-1.3010998-2.9186699-2.8132-2.9186699-4.9581995,0-9.2482991,2.8131697-11.3933792,6.8572004-1.3011.3163996-2.46154,1.0900993-3.3054899,2.1098995ZM.914283,15.9999873c0-2.9538002,2.250547-5.2044001,5.204387-5.2044001,1.19561,0,2.2857203.3867998,3.1296601,1.0550003-.4219398.6680994-.7384405,1.4066-.94944,2.2152996-.5274501-.6329994-1.3011103-1.0549002-2.1450601-1.0549002-1.6175599,0-2.95383,1.3362999-2.95383,2.9187002,0,4.9933996,2.7780001,9.2482996,6.8923004,11.4285002.3164997,1.3010998,1.0900993,2.4263992,2.1098995,3.2703991C5.62639,29.0109869.914283,23.1735865.914283,15.9999873ZM15.9647999,31.9999873c8.5450993,0,16.0352001-6.8220005,16.0352001-16C32,7.1384274,24.8616009-.0000127,15.9647999-.0000127,7.1384401-.0000127,0,7.1384274,0,15.9999873c0,8.8616009,7.1384401,16,15.9647999,16Z"/></g><path id="Wordmark" d="M44,10.3359877h3.1520004l2.9440002,8.0480003h.0480003l2.9119987-8.0480003h3.1679993v11.3279991h-2v-9.1039991h-.0319977l-3.4400024,9.1039991h-1.4079971l-3.3920021-9.1039991h-.0320015v9.1039991h-1.9199982v-11.3279991ZM61.7421989,10.3359877h7.5040016v1.7599993h-5.487999v2.8800001h5.1999969v1.6960011h-5.1999969v3.1999989h5.776001v1.7919998h-7.7920036v-11.3279991ZM78.1884003,15.2159869c.288002,0,.5759964-.0212994.8639984-.0639992.288002-.0427008.5466995-.1227007.776001-.2400007.2294006-.1173.4187012-.2852993.5680008-.5039997.1493988-.2187004.223999-.4987001.223999-.8400002,0-.3092995-.0692978-.5627003-.2080002-.7600002-.1385956-.1973-.3145981-.3546991-.5279999-.4719992-.2133026-.1173-.4560013-.1973009-.7279968-.2400007-.2720032-.0426998-.5360031-.0640001-.7919998-.0640001h-1.8240051v3.184h1.6480026ZM74.5243988,10.3359877h3.9360046c.5333939,0,1.0506973.0559998,1.5519943.1679993.5014038.1120005.946701.2960005,1.3359985.552.3894043.2560005.7014008.592.9360046,1.0080004.2346954.4159994.3519974.9226999.3519974,1.5199995,0,.8213005-.2319946,1.4907007-.6959991,2.0080004-.4639969.5173006-1.0959015.8667002-1.8959961,1.0479994l3.0239944,5.0240002h-2.4319992l-2.6240005-4.7999992h-1.4720001v4.7999992h-2.0159988v-11.3279991ZM95.7866974,12.9919869c-.2986984-.4052992-.6879959-.7012997-1.1679993-.8879995-.4799957-.1866999-.9494019-.2799997-1.4079971-.2799997-.5867004,0-1.1200027.1066999-1.5999985.3199997-.4800034.2132998-.8934021.5066996-1.2400055.8800001-.3466949.3732996-.6133957.8106995-.7999954,1.3120003-.1866989.5012999-.2799988,1.0452995-.2799988,1.632,0,.6187.0905991,1.184.2719955,1.6959991.1813049.512001.4400024.9519997.776001,1.3199997s.7386017.6533012,1.2080002.8560009c.4692993.2026997.9972992.3039989,1.5839996.3039989.6080017,0,1.1465988-.1199989,1.6159973-.3599987.4693069-.2399998.8480072-.5573006,1.1360016-.9519997l1.6160049,1.1359997c-.5014038.6292992-1.1147003,1.1173-1.840004,1.4639988-.7254028.3467007-1.5734024.5200005-2.5439987.5200005-.8853989,0-1.6987-.1466999-2.4400024-.4400005-.7414017-.2932987-1.3787003-.7039986-1.9119949-1.2319984-.5334015-.5279999-.9494019-1.1573009-1.2480011-1.8880005-.2986984-.7306995-.447998-1.5387001-.447998-2.4239998,0-.9067001.1572952-1.7253008.4719925-2.4560003.3146057-.7307005.7466049-1.3520002,1.2960052-1.8640003.5493011-.5120001,1.1972961-.9067001,1.9440002-1.184.7465973-.2772999,1.5572968-.4159994,2.4319992-.4159994.3626022,0,.7413025.0346994,1.1360016.1040001.3945999.0692997.7733002.1759996,1.135994.3199997.3626022.1440001.7040024.3226995,1.0240021.5360003.3199997.2132998.5920029.4692993.8160019.7679996l-1.5360031,1.2159996ZM110.7929993,17.503987c0,.6827011-.1169968,1.2987003-.3519974,1.8479996-.2350006.5493011-.5550003,1.0160007-.9599991,1.4000015-.4050064.3839989-.8850021.6799984-1.4400024.8879986s-1.1569977.3120003-1.8079987.3120003-1.2529984-.1040001-1.8079987-.3120003-1.0370026-.5039997-1.4480057-.8879986c-.4109955-.3840008-.7309952-.8507004-.9599991-1.4000015-.2289963-.5492992-.3440018-1.1652985-.3440018-1.8479996v-7.1679993h2.0160065v7.0879993c0,.3306999.0429993.6587009.1279984.9840012.0849991.3252983.2269974.6159992.423996.8719997.1970062.2559986.4589996.4639988.7840042.6239986.3249969.1599998.7279968.2399998,1.2080002.2399998.4799957,0,.8829956-.0799999,1.2080002-.2399998.3249969-.1599998.586998-.368.7839966-.6239986.1969986-.2560005.3390045-.5467014.4240036-.8719997.0849991-.3253002.1279984-.6533012.1279984-.9840012v-7.0879993h2.0159988v7.1679993ZM119.8789978,15.2159869c.288002,0,.576004-.0212994.8639984-.0639992.288002-.0427008.5470047-.1227007.776001-.2400007.2290039-.1173.4190063-.2852993.5680008-.5039997.1490021-.2187004.223999-.4987001.223999-.8400002,0-.3092995-.0690002-.5627003-.2080002-.7600002s-.3149948-.3546991-.5279999-.4719992c-.2129974-.1173-.4559937-.1973009-.7279968-.2400007s-.5360031-.0640001-.7919998-.0640001h-1.8239975v3.184h1.647995ZM116.2149963,10.3359877h3.9360046c.5329971,0,1.0510025.0559998,1.552002.1679993.5009995.1120005.9469986.2960005,1.3359985.552.3889999.2560005.7009964.592.935997,1.0080004.2350006.4159994.352005.9226999.352005,1.5199995,0,.8213005-.2320023,1.4907007-.6960068,2.0080004-.4639969.5173006-1.095993.8667002-1.8959961,1.0479994l3.0240021,5.0240002h-2.4319992l-2.6240005-4.7999992h-1.4720001v4.7999992h-2.0160065v-11.3279991ZM131.9250031,16.7519881l-4.2560043-6.4160004h2.4639969l2.8480072,4.7679996,2.8799896-4.7679996h2.3360138l-4.256012,6.4160004v4.9119987h-2.0159912v-4.9119987Z" fill-rule="evenodd"/></svg>
     </div>
   </div>
   <div class="welcome-card">
-    <div class="welcome-card-label">My Name is</div>
+    <div class="welcome-card-label">This page was built for you.</div>
     <div class="welcome-card-name">Miguel Romero <span class="welcome-accent">Jr.</span></div>
-    <div class="welcome-card-sub">I build social presence that compounds trust. 10+ years owning brand voice, community, and real-time strategy for fintech and tech companies — with the taste to know what belongs online and the judgment to protect it.</div>
+    <div class="welcome-card-tagline">I build social presence that compounds trust.</div>
+    <div class="welcome-card-sub">10+ years building brands that founders respect and operators trust. I understand that credibility is earned in real time — through cultural fluency, disciplined participation, and knowing exactly when to make an impact.</div>
     <div class="welcome-card-actions">
       <a href="https://www.linkedin.com/in/miguelromerojr/" target="_blank" class="welcome-btn-primary">View LinkedIn →</a>
       <a href="mailto:miguel@romerojr.com" class="welcome-btn-ghost">Get in Touch</a>
@@ -166,49 +124,45 @@ body { padding-top: 52px; }
   </div>
 </div>
 
-<!-- STATS -->
 <div class="section-gray" id="about">
   <div class="section-inner">
     <div class="section-eyebrow">At a Glance</div>
     <div class="section-title">At a Glance</div>
     <div class="stats fade-up">
       <div class="stat"><span class="stat-value">10+</span><span class="stat-label">years in social, community & brand</span></div>
-      <div class="stat"><span class="stat-value">5+</span><span class="stat-label">companies incl. Gemini, Agoric, Nifty Gateway</span></div>
+      <div class="stat"><span class="stat-value">3+</span><span class="stat-label">companies incl. Gemini, Agoric, Nifty Gateway</span></div>
       <div class="stat"><span class="stat-value">50+</span><span class="stat-label">launches, campaigns & community programs</span></div>
       <div class="stat"><span class="stat-value small">Created with Astra</span><span class="stat-label">personal AI stack — <a href="https://medium.com/@romerojr/i-built-my-own-ai-stack-i-called-it-astra-92c5f9c2c074" target="_blank">learn more</a></span></div>
     </div>
   </div>
 </div>
 
-<!-- SKILLS -->
 <div class="section-light">
   <div class="section-inner">
     <div class="section-eyebrow">Competencies</div>
     <div class="section-title">Skills</div>
     <div class="skills-grid fade-up">
       <div class="skill-card"><div class="skill-category">Social & Community</div><div class="skill-list">X / Twitter<br>Reddit<br>LinkedIn<br>Instagram<br>Community Moderation</div></div>
-      <div class="skill-card"><div class="skill-category">Startup Ecosystem</div><div class="skill-list">Founder Communities<br>Operator Networks<br>VC & Investor Circles<br>SaaS & Fintech<br>Early-stage Culture</div></div>
+      <div class="skill-card"><div class="skill-category">Strategy & Growth</div><div class="skill-list">GTM Strategy<br>Brand Positioning<br>Launch Playbooks<br>Audience Development<br>Performance Reporting</div></div>
       <div class="skill-card"><div class="skill-category">Content & Copy</div><div class="skill-list">Brand Voice<br>Social Copywriting<br>Cultural Fluency<br>Editorial Calendars<br>Campaign Messaging</div></div>
       <div class="skill-card"><div class="skill-category">Tools & AI</div><div class="skill-list">Claude / ChatGPT<br>Midjourney / Sora<br>HubSpot / Mailchimp<br>Google Analytics<br>Figma / Premiere</div></div>
     </div>
   </div>
 </div>
 
-<!-- SOCIAL WINS -->
 <div class="section-gray">
   <div class="section-inner">
     <div class="section-eyebrow">Selected Posts</div>
     <div class="section-title" id="wins">Favorite Social Media Wins</div>
     <div class="tweet-grid fade-up">
-      <div><blockquote class="twitter-tweet"><p lang="en" dir="ltr">1/ Today we are excited to introduce✨Publishers✨<br>A new platform that will enable people to curate their own drops on Nifty Gateway. <a href="https://t.co/SUsOUhdzS0">pic.twitter.com/SUsOUhdzS0</a></p>&mdash; Nifty Gateway Studio (@niftygateway) <a href="https://twitter.com/niftygateway/status/1565324386323890178?ref_src=twsrc%5Etfw">September 1, 2022</a></blockquote></div>
-      <div><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Agoric Orchestration API is now LIVE on Mainnet 🚀<br><br>Say goodbye to complex, multi-step chaos and witness the power of one-click, cross-chain innovation!<br><br>🔄 Ready to build the impossible?<br><br>↓ <a href="https://t.co/UllUHygaJL">pic.twitter.com/UllUHygaJL</a></p>&mdash; Agoric (@agoric) <a href="https://twitter.com/agoric/status/1843713327392010725?ref_src=twsrc%5Etfw">October 8, 2024</a></blockquote></div>
-      <div><blockquote class="twitter-tweet"><p lang="en" dir="ltr">★ Introducing our newest feature, Composer!<br><br>○ Create Stories: long form content with on &amp; off-chain assets<br>○ Curate Showcases: drops &amp; themed curations with curator fees<br>○ Compose Open Calls: contests, exhibitions &amp; more<br><br>Your journey starts here ↓<a href="https://t.co/Rk81N0YHca">https://t.co/Rk81N0YHca</a> <a href="https://t.co/wQwqOZ74kG">pic.twitter.com/wQwqOZ74kG</a></p>&mdash; Joyn (@joynxyz) <a href="https://twitter.com/joynxyz/status/1688569550562803713?ref_src=twsrc%5Etfw">August 7, 2023</a></blockquote></div>
+      <div><blockquote class="twitter-tweet"><p lang="en" dir="ltr">1/ Today we are excited to introduce&#10024;Publishers&#10024;<br>A new platform that will enable people to curate their own drops on Nifty Gateway. <a href="https://t.co/SUsOUhdzS0">pic.twitter.com/SUsOUhdzS0</a></p>&mdash; Nifty Gateway Studio (@niftygateway) <a href="https://twitter.com/niftygateway/status/1565324386323890178?ref_src=twsrc%5Etfw">September 1, 2022</a></blockquote></div>
+      <div><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Agoric Orchestration API is now LIVE on Mainnet &#128640;<br><br>Say goodbye to complex, multi-step chaos and witness the power of one-click, cross-chain innovation!<br><br>&#128260; Ready to build the impossible?<br><br>&#8595; <a href="https://t.co/UllUHygaJL">pic.twitter.com/UllUHygaJL</a></p>&mdash; Agoric (@agoric) <a href="https://twitter.com/agoric/status/1843713327392010725?ref_src=twsrc%5Etfw">October 8, 2024</a></blockquote></div>
+      <div><blockquote class="twitter-tweet"><p lang="en" dir="ltr">&#9733; Introducing our newest feature, Composer!<br><br>&#9675; Create Stories: long form content with on &amp; off-chain assets<br>&#9675; Curate Showcases: drops &amp; themed curations with curator fees<br>&#9675; Compose Open Calls: contests, exhibitions &amp; more<br><br>Your journey starts here &#8595;<a href="https://t.co/Rk81N0YHca">https://t.co/Rk81N0YHca</a> <a href="https://t.co/wQwqOZ74kG">pic.twitter.com/wQwqOZ74kG</a></p>&mdash; Joyn (@joynxyz) <a href="https://twitter.com/joynxyz/status/1688569550562803713?ref_src=twsrc%5Etfw">August 7, 2023</a></blockquote></div>
     </div>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 </div>
 
-<!-- WORK -->
 <div class="section-light">
   <div class="section-inner">
     <div class="section-eyebrow">Portfolio</div>
@@ -236,15 +190,13 @@ body { padding-top: 52px; }
   </div>
 </div>
 
-<!-- EXPERIENCE -->
 <div class="section-gray">
   <div class="section-inner">
     <div class="section-eyebrow">Background</div>
     <div class="section-title" id="experience">Recent Experience</div>
     <div class="exp-list fade-up">
       <div class="exp-row">
-        <span class="exp-num">01</span>
-        <span class="exp-company">Agoric</span>
+        <span class="exp-num">01</span><span class="exp-company">Agoric</span>
         <div>
           <div class="exp-role-title">Community Marketing Lead</div>
           <ul class="role-desc">
@@ -253,12 +205,10 @@ body { padding-top: 52px; }
             <li>Built AI-native content workflows that 3x'd output and cut production time 70% — developed playbooks for agentic ideation, drafting, and multi-channel distribution</li>
           </ul>
         </div>
-        <span class="exp-period">Sep 2024–Mar 2026</span>
-        <span class="pill">full-time</span>
+        <span class="exp-period">Sep 2024–Mar 2026</span><span class="pill">full-time</span>
       </div>
       <div class="exp-row">
-        <span class="exp-num">02</span>
-        <span class="exp-company">Joyn</span>
+        <span class="exp-num">02</span><span class="exp-company">Joyn</span>
         <div>
           <div class="exp-role-title">Marketing Lead</div>
           <ul class="role-desc">
@@ -267,12 +217,10 @@ body { padding-top: 52px; }
             <li>Partnered across product, CX, and legal on 3 major launches — ensuring social participation was accurate, well-timed, and aligned with broader brand and growth goals</li>
           </ul>
         </div>
-        <span class="exp-period">Apr 2023–Mar 2024</span>
-        <span class="pill">full-time</span>
+        <span class="exp-period">Apr 2023–Mar 2024</span><span class="pill">full-time</span>
       </div>
       <div class="exp-row">
-        <span class="exp-num">03</span>
-        <span class="exp-company">Gemini &amp; Nifty Gateway</span>
+        <span class="exp-num">03</span><span class="exp-company">Gemini &amp; Nifty Gateway</span>
         <div>
           <div class="exp-role-title">Marketing Manager</div>
           <ul class="role-desc">
@@ -281,8 +229,7 @@ body { padding-top: 52px; }
             <li>Served as first-line brand voice during market-sensitive, high-visibility moments — direct, no corporate speak, and fast when it mattered most</li>
           </ul>
         </div>
-        <span class="exp-period">Feb 2021–Aug 2022</span>
-        <span class="pill">full-time</span>
+        <span class="exp-period">Feb 2021–Aug 2022</span><span class="pill">full-time</span>
       </div>
     </div>
   </div>
@@ -299,44 +246,14 @@ body { padding-top: 52px; }
 </footer>
 
 <script>
-  setTimeout(() => {
-    document.querySelectorAll('.fade-up').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), i * 120);
-    });
-  }, 100);
-
+  setTimeout(() => { document.querySelectorAll('.fade-up').forEach((el, i) => { setTimeout(() => el.classList.add('visible'), i * 120); }); }, 100);
   const statValues = document.querySelectorAll('.stat-value:not(.small)');
   const targets = [];
-  statValues.forEach(el => {
-    const raw = el.textContent.trim();
-    const num = parseInt(raw);
-    if (!isNaN(num)) {
-      targets.push({ el, target: num, suffix: raw.replace(num, '') });
-      el.textContent = '0' + raw.replace(num, '');
-    }
-  });
-  function countUp(entry) {
-    if (!entry.isIntersecting) return;
-    targets.forEach(({ el, target, suffix }) => {
-      let start = 0; const duration = 1200; const step = 16;
-      const increment = target / (duration / step);
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) { el.textContent = target + suffix; clearInterval(timer); return; }
-        el.textContent = Math.floor(start) + suffix;
-      }, step);
-    });
-    statsObserver.unobserve(entry.target);
-  }
+  statValues.forEach(el => { const raw = el.textContent.trim(); const num = parseInt(raw); if (!isNaN(num)) { targets.push({ el, target: num, suffix: raw.replace(num, '') }); el.textContent = '0' + raw.replace(num, ''); } });
+  function countUp(entry) { if (!entry.isIntersecting) return; targets.forEach(({ el, target, suffix }) => { let start = 0; const duration = 1200; const step = 16; const increment = target / (duration / step); const timer = setInterval(() => { start += increment; if (start >= target) { el.textContent = target + suffix; clearInterval(timer); return; } el.textContent = Math.floor(start) + suffix; }, step); }); statsObserver.unobserve(entry.target); }
   const statsObserver = new IntersectionObserver(entries => entries.forEach(countUp), { threshold: 0.3 });
-  const statsEl = document.querySelector('.stats');
-  if (statsEl) statsObserver.observe(statsEl);
-
-  const fadeObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target); }
-    });
-  }, { threshold: 0.1 });
+  const statsEl = document.querySelector('.stats'); if (statsEl) statsObserver.observe(statsEl);
+  const fadeObserver = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target); } }); }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 </script>
 </body>
